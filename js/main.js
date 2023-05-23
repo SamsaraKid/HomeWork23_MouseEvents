@@ -40,15 +40,15 @@ function end(event){
 }
 
 function checkForEaten(id){
-    let animalCenterX = animal[id].offsetLeft + 75
-    let animalCenterY = animal[id].offsetTop + 75
+    let animalCenterX = animal[id].offsetLeft + 150
+    let animalCenterY = animal[id].offsetTop + 150
 
-    let foodCenterX = food[foodIDs[id]].offsetLeft + 75
-    let foodCenterY = food[foodIDs[id]].offsetTop + 75
+    let foodCenterX = food[foodIDs[id]].offsetLeft + 150
+    let foodCenterY = food[foodIDs[id]].offsetTop + 150
 
     // расстояние между центрами окружностей d = корень(a^2 + b^2)
     let centersDistance = Math.pow(Math.pow(Math.abs(foodCenterX - animalCenterX), 2) + Math.pow(Math.abs(foodCenterY - animalCenterY), 2), 0.5)
-    if (centersDistance < 150){
+    if (centersDistance < 300){
         food[foodIDs[id]].setAttribute('hidden','true')
     }
 }
